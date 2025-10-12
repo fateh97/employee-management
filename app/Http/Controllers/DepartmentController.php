@@ -73,4 +73,12 @@ class DepartmentController extends Controller
         $department->delete();
         return response()->json(null, 204);
     }
+
+    //Alternative delete department using POST
+    public function destroyDepartment(Department $department, $id)
+    {
+        $department = Department::findOrFail($id);
+        $department->delete();
+        return response()->json(null, 204);
+    }
 }

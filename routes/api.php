@@ -13,8 +13,12 @@ Route::apiResource('employees', EmployeeController::class)->parameters([
 
 // Alternative way for update employee using POST
 Route::post('/employees/{id}/edit', [EmployeeController::class, 'updateEmployee']);
+// Alternative way for delete employee using POST
+Route::post('/employees/{id}/delete', [EmployeeController::class, 'destroyEmployee']);
 
 // Alternative way for update department using POST
 Route::post('/departments/{id}/edit', [DepartmentController::class, 'updateDepartment']);
+// Alternative way for delete employee using POST
+Route::post('/departments/{id}/delete', [DepartmentController::class, 'destroyDepartment']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);

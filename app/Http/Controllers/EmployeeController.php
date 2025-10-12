@@ -83,4 +83,12 @@ class EmployeeController extends Controller
         $employee->delete();
         return response()->json(null, 204);
     }
+
+    //Alternative delete employee using POST
+    public function destroyEmployee(Employee $employee, $id)
+    {
+        $employee = Employee::findOrFail($id);
+        $employee->delete();
+        return response()->json(null, 204);
+    }
 }
